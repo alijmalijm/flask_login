@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, redirect, url_for
+from flask import Flask,jsonify, render_template, request, redirect, url_for
 
 app = Flask(__name__)
 
@@ -18,6 +18,8 @@ def login():
 @app.route('/secret')
 def secret():
     return render_template('secret.html')
-
+@app.route("/healthz")
+def healthz():
+    return jsonify({"status": "ok"}), 200
 
 #app.run(debug=True)
