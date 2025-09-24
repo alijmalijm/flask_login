@@ -7,7 +7,7 @@ ACCESS_CODE = "123456"
 @app.route('/')
 def welcome():
     return render_template('welcome.html')
-@app.route('/', methods=['GET', 'POST'])
+@app.route('/login', methods=['GET', 'POST'])
 def login():
     if request.method == 'POST':
         code = request.form.get('code')
