@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>صفحه ورود</title>
+</head>
+<body>
+    <h1>ورود به سایت</h1>
+    {% if error %}
+        <p style="color:red;">{{ error }}</p>
+    {% endif %}
+    <form method="POST">
+        <label>کد ورود:</label>
+        <input type="text" name="code" required>
+        <button type="submit">ورود</button>
+    </form>
+</body>
+</html>

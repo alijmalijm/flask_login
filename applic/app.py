@@ -1,0 +1,23 @@
+from flask import Flask, render_template, request, redirect, url_for
+
+app = Flask(__name__)
+
+# کد ورود ثابت
+ACCESS_CODE = "123456"
+
+@app.route('/', methods=['GET', 'POST'])
+def login():
+    if request.method == 'POST':
+        code = request.form.get('code')
+        if code == ACCESS_CODE:
+            return redirect(url_for('secret'))
+        else:
+            return render_template('login.html', error="کد اشتباه است!")
+    return render_template('login.html', error=None)
+
+@app.route('/secret')
+def secret():
+    return render_template('secret.html')
+
+
+#app.run(debug=True)
