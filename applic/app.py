@@ -5,8 +5,8 @@ app = Flask(__name__)
 # کد ورود ثابت
 ACCESS_CODE = "123456"
 @app.route('/')
-def welcom():
-    return render_template('welcom.html')
+def welcome():
+    return render_template('welcome.html')
 @app.route('/', methods=['GET', 'POST'])
 def login():
     if request.method == 'POST':
